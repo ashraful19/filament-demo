@@ -16,15 +16,13 @@ return new class extends Migration
             $table->string('state')->nullable();
             $table->string('zip')->nullable();
 
-            // Determine database type and use appropriate syntax for generated columns
-            if (DB::getDriverName() === 'pgsql') {
-                // PostgreSQL requires stored columns with || for concatenation
+            $driver = Schema::getConnection()->getDriverName();
+
+            if ($driver === 'pgsql') {
                 $table->string('full_address')->storedAs("street || ', ' || zip || ' ' || city");
-            } elseif (DB::getDriverName() === 'sqlite') {
-                // SQLite uses || for concatenation, virtualAs is used
+            } elseif ($driver === 'sqlite') {
                 $table->string('full_address')->virtualAs("street || ', ' || zip || ' ' || city");
             } else {
-                // MySQL uses CONCAT for string concatenation
                 $table->string('full_address')->virtualAs("CONCAT(street, ', ', zip, ' ', city)");
             }
 
