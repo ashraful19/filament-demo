@@ -17,6 +17,9 @@ use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
 use UnitEnum;
 
+/**
+ * @extends \Filament\Resources\Resource<Brand>
+ */
 class BrandResource extends Resource
 {
     protected static ?string $model = Brand::class;

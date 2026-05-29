@@ -16,6 +16,9 @@ use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
 use UnitEnum;
 
+/**
+ * @extends \Filament\Resources\Resource<Timesheet>
+ */
 class TimesheetResource extends Resource
 {
     protected static ?string $model = Timesheet::class;

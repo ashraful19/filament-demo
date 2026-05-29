@@ -22,6 +22,9 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use UnitEnum;
 
+/**
+ * @extends \Filament\Resources\Resource<Post>
+ */
 class PostResource extends Resource
 {
     protected static ?string $model = Post::class;

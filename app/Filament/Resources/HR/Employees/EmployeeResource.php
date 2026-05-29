@@ -21,6 +21,9 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use UnitEnum;
 
+/**
+ * @extends \Filament\Resources\Resource<Employee>
+ */
 class EmployeeResource extends Resource
 {
     protected static ?string $model = Employee::class;

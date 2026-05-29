@@ -1,0 +1,39 @@
+name: format
+
+on:
+  push:
+    branches:
+      - 5.x
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  format:
+    if: "${{ !startsWith(github.event.head_commit.message, 'chore: fix code style') }}"
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout code
+        # Uses a maintainer PAT so the auto-commit push can bypass branch protection;
+        # the default GITHUB_TOKEN pushes as `github-actions[bot]` and gets rejected.
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2 # zizmor: ignore[artipacked]
+        with:
+          token: ${{ secrets.GH_ACCESS_TOKEN }}
+      - name: Set up PHP
+        uses: shivammathur/setup-php@7c071dfe9dc99bdf297fa79cb49ea005b9fcadbc # 2.37.1
+        with:
+          php-version: 8.4
+      - name: Install Composer dependencies
+        run: composer install --no-interaction --no-scripts
+      - name: Run code style fixes
+        run: composer cs
+      - name: Commit changes
+        uses: stefanzweifel/git-auto-commit-action@04702edda442b2e678b25b537cec683a1493fcb9 # v7.1.0
+        with:
+          commit_message: 'chore: fix code style'

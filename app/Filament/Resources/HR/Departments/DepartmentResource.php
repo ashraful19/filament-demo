@@ -14,6 +14,9 @@ use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
 use UnitEnum;
 
+/**
+ * @extends \Filament\Resources\Resource<Department>
+ */
 class DepartmentResource extends Resource
 {
     protected static ?string $model = Department::class;

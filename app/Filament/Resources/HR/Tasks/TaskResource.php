@@ -17,6 +17,9 @@ use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Model;
 use UnitEnum;
 
+/**
+ * @extends \Filament\Resources\Resource<Task>
+ */
 class TaskResource extends Resource
 {
     protected static ?string $model = Task::class;

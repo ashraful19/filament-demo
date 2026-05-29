@@ -20,6 +20,9 @@ use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Model;
 use UnitEnum;
 
+/**
+ * @extends \Filament\Resources\Resource<Expense>
+ */
 class ExpenseResource extends Resource
 {
     protected static ?string $model = Expense::class;

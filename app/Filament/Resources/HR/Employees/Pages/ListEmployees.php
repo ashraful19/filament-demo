@@ -26,7 +26,7 @@ class ListEmployees extends ListRecords
                 ->label('Leave Requests')
                 ->color('gray')
                 ->icon(Heroicon::Calendar)
-                ->badge(LeaveRequest::query()->where('status', LeaveStatus::Pending)->count())
+                ->badge((string) LeaveRequest::query()->where('status', LeaveStatus::Pending)->count())
                 ->badgeColor('warning')
                 ->url(LeaveRequestResource::getUrl('index')),
             CreateAction::make(),

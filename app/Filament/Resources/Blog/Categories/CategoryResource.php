@@ -14,6 +14,9 @@ use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
 use UnitEnum;
 
+/**
+ * @extends \Filament\Resources\Resource<PostCategory>
+ */
 class CategoryResource extends Resource
 {
     protected static ?string $model = PostCategory::class;

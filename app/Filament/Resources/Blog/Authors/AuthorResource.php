@@ -13,6 +13,9 @@ use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
 use UnitEnum;
 
+/**
+ * @extends \Filament\Resources\Resource<Author>
+ */
 class AuthorResource extends Resource
 {
     protected static ?string $model = Author::class;

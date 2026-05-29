@@ -19,6 +19,9 @@ use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Model;
 use UnitEnum;
 
+/**
+ * @extends \Filament\Resources\Resource<LeaveRequest>
+ */
 class LeaveRequestResource extends Resource
 {
     protected static ?string $model = LeaveRequest::class;

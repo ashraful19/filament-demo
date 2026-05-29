@@ -20,6 +20,9 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use UnitEnum;
 
+/**
+ * @extends \Filament\Resources\Resource<Order>
+ */
 class OrderResource extends Resource
 {
     protected static ?string $model = Order::class;
