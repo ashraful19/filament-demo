@@ -16,6 +16,10 @@ use Filament\Schemas\Components\Section;
 use Filament\Schemas\Components\Utilities\Set;
 use Filament\Schemas\Schema;
 use Illuminate\Support\Str;
+use Ashrafic\FilamentTranslationSuite\Forms\Components\TranslatableTabs;
+use Ashrafic\FilamentTranslationSuite\Forms\Components\TranslatableStack;
+use Ashrafic\FilamentTranslationSuite\Forms\Components\TranslatableFieldsets;
+use Ashrafic\FilamentTranslationSuite\Forms\Components\TranslatableSections;
 
 class ProductForm
 {
@@ -27,27 +31,31 @@ class ProductForm
                     ->schema([
                         Section::make()
                             ->schema([
-                                TextInput::make('name')
-                                    ->required()
-                                    ->maxLength(255)
-                                    ->live(onBlur: true)
-                                    ->afterStateUpdated(function (string $operation, $state, Set $set): void {
-                                        if ($operation !== 'create') {
-                                            return;
-                                        }
+                                TranslatableFieldsets::make()
+                                    ->showFlags()
+                                    ->schema([
+                                        TextInput::make('name')
+                                            ->label(__('product.name'))
+                                            ->required()
+                                            ->maxLength(255)
+                                            ->live(onBlur: true)
+                                            ->afterStateUpdated(function (string $operation, $state, Set $set): void {
+                                                if ($operation !== 'create') {
+                                                    return;
+                                                }
 
-                                        $set('slug', Str::slug($state));
-                                    }),
-
+                                                $set('slug', Str::slug($state));
+                                            })->columnSpanFull(),
+                                        RichEditor::make('description')
+                                            ->label(trans('product.description'))
+                                            ->columnSpan('full'),
+                                    ])->columnSpan('full')->columns(2)->prefixLocaleToFieldLabel(),
                                 TextInput::make('slug')
                                     ->disabled()
                                     ->dehydrated()
                                     ->required()
                                     ->maxLength(255)
                                     ->unique(Product::class, 'slug', ignoreRecord: true),
-
-                                RichEditor::make('description')
-                                    ->columnSpan('full'),
                             ])
                             ->columns(2),
 

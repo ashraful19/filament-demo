@@ -57,6 +57,7 @@ class AdminPanelProvider extends PanelProvider
             ->colors([
                 'primary' => Color::Blue,
             ])
-            ->font('Albert Sans');
+            ->font('Albert Sans')
+            ->plugin(\Ashrafic\FilamentTranslationSuite\FilamentTranslationSuitePlugin::make());
     }
 }

@@ -9,6 +9,7 @@
     "license": "MIT",
     "require": {
         "php": "^8.1",
+        "ashrafic/filament-translation-suite": "@dev",
         "fakerphp/faker": "^1.9.1",
         "filament/filament": "^5.0",
         "filament/spatie-laravel-media-library-plugin": "^5.0",
@@ -99,5 +100,11 @@
         }
     },
     "minimum-stability": "stable",
-    "prefer-stable": true
+    "prefer-stable": true,
+    "repositories": [
+        {
+            "type": "path", 
+            "url": "../filament-translation-suite"
+        }
+    ]
 }
