@@ -6,6 +6,7 @@ use App\Enums\ProjectStatus;
 use App\Enums\TaskPriority;
 use App\Models\HR\Employee;
 use App\Models\HR\Project;
+use Ashrafic\FilamentTranslationSuite\Forms\Components\TranslatableFieldsets;
 use Filament\Forms\Components\Builder;
 use Filament\Forms\Components\Builder\Block;
 use Filament\Forms\Components\ColorPicker;
@@ -36,17 +37,28 @@ class ProjectForm
                             ->icon(Heroicon::InformationCircle)
                             ->columns(2)
                             ->schema([
-                                TextInput::make('name')
-                                    ->required()
-                                    ->maxLength(255)
-                                    ->live(onBlur: true)
-                                    ->afterStateUpdated(function (string $operation, $state, Set $set): void {
-                                        if ($operation !== 'create') {
-                                            return;
-                                        }
+                                TranslatableFieldsets::make()
+                                    ->showFlags()
+                                    ->schema([
+                                        TextInput::make('name')
+                                            ->required()
+                                            ->maxLength(255)
+                                            ->live(onBlur: true)
+                                            ->afterStateUpdated(function (string $operation, $state, Set $set): void {
+                                                if ($operation !== 'create') {
+                                                    return;
+                                                }
 
-                                        $set('slug', Str::slug($state));
-                                    }),
+                                                $set('slug', Str::slug($state));
+                                            })
+                                            ->columnSpanFull(),
+
+                                        RichEditor::make('description')
+                                            ->columnSpanFull(),
+                                    ])
+                                    ->columnSpanFull()
+                                    ->columns(2)
+                                    ->prefixLocaleToFieldLabel(),
 
                                 TextInput::make('slug')
                                     ->disabled()
@@ -54,9 +66,6 @@ class ProjectForm
                                     ->required()
                                     ->maxLength(255)
                                     ->unique(Project::class, 'slug', ignoreRecord: true),
-
-                                RichEditor::make('description')
-                                    ->columnSpanFull(),
 
                                 Select::make('department_id')
                                     ->relationship('department', 'name')

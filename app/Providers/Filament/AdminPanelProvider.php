@@ -16,13 +16,15 @@ use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Session\Middleware\AuthenticateSession;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
+use FilamentWhiteLabel\Resources\WhiteLabelSettingsResource;
+
 
 class AdminPanelProvider extends PanelProvider
 {
+
     public function panel(Panel $panel): Panel
     {
         return $panel
-            ->default()
             ->id('admin')
             ->viteTheme('resources/css/filament/admin/theme.css')
             ->login(Login::class)
@@ -55,9 +57,12 @@ class AdminPanelProvider extends PanelProvider
             ])
             ->spa()
             ->colors([
-                'primary' => Color::Blue,
+                //'primary' => Color::Blue,
             ])
             ->font('Albert Sans')
-            ->plugin(\Ashrafic\FilamentTranslationSuite\FilamentTranslationSuitePlugin::make());
+            ->plugin(\Ashrafic\FilamentTranslationSuite\FilamentTranslationSuitePlugin::make())
+            ->resources([
+                // WhiteLabelSettingsResource::class,
+            ]);;//->whiteLabel();
     }
 }

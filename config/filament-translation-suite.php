@@ -38,11 +38,20 @@ return [
     ],
 
     'deepl' => [
-        'api_key' => env('DEEPL_API_KEY'),
+        'api_key' => env('FTS_DEEPL_API_KEY'),
+        'api_host' => env('FTS_DEEPL_API_HOST', 'api-free.deepl.com'),
         'formality' => 'default',
     ],
     'google_translate' => [
-        'api_key' => env('GOOGLE_TRANSLATE_API_KEY'),
+        'api_key' => env('FTS_GOOGLE_API_KEY'),
+    ],
+    'openai' => [
+        'api_key' => env('FTS_OPENAI_API_KEY'),
+        'model' => env('FTS_OPENAI_MODEL', 'gpt-4o-mini'),
+    ],
+    'anthropic' => [
+        'api_key' => env('FTS_ANTHROPIC_API_KEY'),
+        'model' => env('FTS_ANTHROPIC_MODEL', 'claude-haiku-4-5-20251001'),
     ],
 
     'scanner' => [
@@ -51,7 +60,7 @@ return [
     ],
 
     'bulk_translation' => [
-        'chunk_size' => 10,
+        'chunk_size' => 20,
         'queue' => 'default',
     ],
 

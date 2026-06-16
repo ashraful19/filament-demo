@@ -10,11 +10,14 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Spatie\Translatable\HasTranslations;
 
 class Project extends Model
 {
     /** @use HasFactory<ProjectFactory> */
     use HasFactory;
+
+    use HasTranslations;
 
     use SoftDeletes;
 
@@ -37,6 +40,8 @@ class Project extends Model
         'end_date' => 'date',
         'plan' => 'array',
     ];
+
+    public $translatable = ['name', 'description'];
 
     /** @return BelongsTo<Department, $this> */
     public function department(): BelongsTo

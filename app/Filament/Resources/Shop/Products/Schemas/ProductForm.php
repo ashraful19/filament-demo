@@ -31,7 +31,7 @@ class ProductForm
                     ->schema([
                         Section::make()
                             ->schema([
-                                TranslatableFieldsets::make()
+                                TranslatableStack::make()
                                     ->showFlags()
                                     ->schema([
                                         TextInput::make('name')

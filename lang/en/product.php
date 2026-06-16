@@ -1,6 +1,6 @@
 <?php
 
 return [
-        'name' => 'Name EN',
-        'description' => ''
+        'name' => 'Name',
+        'description' => 'Description'
     ];
