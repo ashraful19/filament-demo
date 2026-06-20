@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f6857385f0d6a006ecd1ed3859d4ba45",
+    "content-hash": "903b9eb836f225d42851337218c57593",
     "packages": [
         {
             "name": "akaunting/laravel-money",
@@ -76,10 +76,10 @@
         },
         {
             "name": "ashrafic/filament-translation-suite",
-            "version": "1.0.4",
+            "version": "1.0.8",
             "dist": {
                 "type": "zip",
-                "url": "https://packages.ashraficlabs.test/download/v1.0.4"
+                "url": "https://packages.ashraficlabs.com/download/v1.0.8"
             },
             "require": {
                 "filament/filament": "^5.0",
@@ -132,21 +132,28 @@
             "license": [
                 "proprietary"
             ],
+            "authors": [
+                {
+                    "name": "Ashrafic Labs",
+                    "email": "hello@ashraficlabs.com",
+                    "homepage": "https://ashraficlabs.com"
+                }
+            ],
             "description": "Unified file + model translation management for Filament with DeepL & Google Translate",
-            "time": "2026-06-13T12:10:17+00:00"
+            "time": "2026-06-16T06:58:20+00:00"
         },
         {
             "name": "ashrafic/filament-white-label",
-            "version": "v1.0.1",
+            "version": "v1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ashrafic/filament-white-label.git",
-                "reference": "4f71a766a5c41d3d92dc59192243e4258ba51ddc"
+                "reference": "f40c2d3ee8b720a125c088c3a4ac98536beb4130"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ashrafic/filament-white-label/zipball/4f71a766a5c41d3d92dc59192243e4258ba51ddc",
-                "reference": "4f71a766a5c41d3d92dc59192243e4258ba51ddc",
+                "url": "https://api.github.com/repos/ashrafic/filament-white-label/zipball/f40c2d3ee8b720a125c088c3a4ac98536beb4130",
+                "reference": "f40c2d3ee8b720a125c088c3a4ac98536beb4130",
                 "shasum": ""
             },
             "require": {
@@ -184,9 +191,9 @@
             "description": "White-label branding for Filament panels. Let every tenant rebrand their admin panel in minutes — no code required.",
             "support": {
                 "issues": "https://github.com/ashrafic/filament-white-label/issues",
-                "source": "https://github.com/ashrafic/filament-white-label/tree/v1.0.1"
+                "source": "https://github.com/ashrafic/filament-white-label/tree/v1.0.2"
             },
-            "time": "2026-06-16T04:08:47+00:00"
+            "time": "2026-06-16T04:24:40+00:00"
         },
         {
             "name": "aws/aws-crt-php",

@@ -62,7 +62,7 @@ class AdminPanelProvider extends PanelProvider
             ->font('Albert Sans')
             ->plugin(\Ashrafic\FilamentTranslationSuite\FilamentTranslationSuitePlugin::make())
             ->resources([
-                // WhiteLabelSettingsResource::class,
-            ]);;//->whiteLabel();
+                WhiteLabelSettingsResource::class,
+            ])->whiteLabel();
     }
 }
