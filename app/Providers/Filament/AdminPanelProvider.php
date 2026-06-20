@@ -25,6 +25,7 @@ class AdminPanelProvider extends PanelProvider
     public function panel(Panel $panel): Panel
     {
         return $panel
+            ->default()
             ->id('admin')
             ->viteTheme('resources/css/filament/admin/theme.css')
             ->login(Login::class)
@@ -60,9 +61,9 @@ class AdminPanelProvider extends PanelProvider
                 //'primary' => Color::Blue,
             ])
             ->font('Albert Sans')
-            ->plugin(\Ashrafic\FilamentTranslationSuite\FilamentTranslationSuitePlugin::make())
-            ->resources([
-                WhiteLabelSettingsResource::class,
-            ])->whiteLabel();
+            ->plugin(\Ashrafic\FilamentTranslationSuite\FilamentTranslationSuitePlugin::make());
+            // ->resources([
+            //     WhiteLabelSettingsResource::class,
+            // ])->whiteLabel();
     }
 }

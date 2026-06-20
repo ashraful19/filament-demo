@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "903b9eb836f225d42851337218c57593",
+    "content-hash": "3c3d9ec906a1f64c1b87170cdacda182",
     "packages": [
         {
             "name": "akaunting/laravel-money",
@@ -76,13 +76,14 @@
         },
         {
             "name": "ashrafic/filament-translation-suite",
-            "version": "1.0.8",
+            "version": "dev-dev",
             "dist": {
-                "type": "zip",
-                "url": "https://packages.ashraficlabs.com/download/v1.0.8"
+                "type": "path",
+                "url": "../filament-translation-suite",
+                "reference": "a322507e3e811f189bfa92558ed31a40a95c607b"
             },
             "require": {
-                "filament/filament": "^5.0",
+                "filament/filament": "^5.0|^4.0",
                 "php": "^8.2",
                 "spatie/laravel-package-tools": "^1.15",
                 "spatie/laravel-translatable": "^6.0"
@@ -119,11 +120,11 @@
                 "lint": [
                     "vendor/bin/pint --test"
                 ],
-                "test": [
-                    "vendor/bin/pest"
-                ],
                 "lint:fix": [
                     "vendor/bin/pint"
+                ],
+                "test": [
+                    "vendor/bin/pest"
                 ],
                 "test:coverage": [
                     "vendor/bin/pest --coverage"
@@ -140,7 +141,9 @@
                 }
             ],
             "description": "Unified file + model translation management for Filament with DeepL & Google Translate",
-            "time": "2026-06-16T06:58:20+00:00"
+            "transport-options": {
+                "relative": true
+            }
         },
         {
             "name": "ashrafic/filament-white-label",
@@ -14526,7 +14529,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {},
+    "stability-flags": {
+        "ashrafic/filament-translation-suite": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
