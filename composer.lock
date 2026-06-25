@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3c3d9ec906a1f64c1b87170cdacda182",
+    "content-hash": "464a4cd32d3a83b12af32a1c4fee2a61",
     "packages": [
         {
             "name": "akaunting/laravel-money",
@@ -75,12 +75,153 @@
             "time": "2026-03-24T11:04:40+00:00"
         },
         {
-            "name": "ashrafic/filament-translation-suite",
+            "name": "ashrafic/filament-automation-bridge",
+            "version": "v1.0.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ashrafic/filament-automation-bridge.git",
+                "reference": "aee476fabac9052c6a6aed204d1bc94907d554e3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ashrafic/filament-automation-bridge/zipball/aee476fabac9052c6a6aed204d1bc94907d554e3",
+                "reference": "aee476fabac9052c6a6aed204d1bc94907d554e3",
+                "shasum": ""
+            },
+            "require": {
+                "filament/filament": "^5.0",
+                "php": "^8.2",
+                "spatie/laravel-package-tools": "^1.15",
+                "spatie/laravel-webhook-server": "^3.8"
+            },
+            "require-dev": {
+                "laravel/pint": "^1.0",
+                "mockery/mockery": "^1.6",
+                "orchestra/testbench": "^9.0",
+                "phpunit/phpunit": "^10.0|^11.0"
+            },
+            "type": "filament-plugin",
+            "extra": {
+                "laravel": {
+                    "aliases": {
+                        "AutomationBridge": "Ashrafic\\FilamentAutomationBridge\\Facades\\AutomationBridge"
+                    },
+                    "providers": [
+                        "Ashrafic\\FilamentAutomationBridge\\FilamentAutomationBridgeServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Ashrafic\\FilamentAutomationBridge\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ashrafic Labs",
+                    "email": "hello@ashraficlabs.com",
+                    "homepage": "https://ashraficlabs.com"
+                }
+            ],
+            "description": "Turn any Eloquent model event into an automation trigger for Zapier, Make, or n8n — without writing code.",
+            "keywords": [
+                "automation",
+                "filament",
+                "filament-plugin",
+                "laravel",
+                "make",
+                "n8n",
+                "zapier"
+            ],
+            "support": {
+                "issues": "https://github.com/ashrafic/filament-automation-bridge/issues",
+                "source": "https://github.com/ashrafic/filament-automation-bridge"
+            },
+            "time": "2026-06-25T02:55:32+00:00"
+        },
+        {
+            "name": "ashrafic/filament-edit-inline",
             "version": "dev-dev",
             "dist": {
                 "type": "path",
-                "url": "../filament-translation-suite",
-                "reference": "a322507e3e811f189bfa92558ed31a40a95c607b"
+                "url": "../filament-edit-inline",
+                "reference": "4bf1c01ac5eabe31a135bcb889950651b1ed03d2"
+            },
+            "require": {
+                "filament/filament": "^5.0",
+                "filament/infolists": "^5.0",
+                "filament/tables": "^5.0",
+                "php": "^8.2",
+                "spatie/laravel-package-tools": "^1.16"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^9.0|^10.0",
+                "pestphp/pest": "^3.0",
+                "phpunit/phpunit": "^11.0"
+            },
+            "suggest": {
+                "spatie/laravel-activitylog": "For audit logging of inline edits (^4.0|^5.0)"
+            },
+            "type": "filament-plugin",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Ashrafic\\FilamentEditInline\\FilamentEditInlineServiceProvider"
+                    ],
+                    "aliases": {
+                        "TableEditor": "Ashrafic\\FilamentEditInline\\Facades\\TableEditor"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Ashrafic\\FilamentEditInline\\": "src/"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "Ashrafic\\FilamentEditInline\\Tests\\": "tests/"
+                }
+            },
+            "scripts": {
+                "lint": [
+                    "vendor/bin/pint --test"
+                ],
+                "lint:fix": [
+                    "vendor/bin/pint"
+                ],
+                "test": [
+                    "vendor/bin/pest"
+                ],
+                "test:coverage": [
+                    "vendor/bin/pest --coverage"
+                ]
+            },
+            "license": [
+                "proprietary"
+            ],
+            "authors": [
+                {
+                    "name": "Ashrafic Labs",
+                    "email": "hello@ashraficlabs.com",
+                    "homepage": "https://ashraficlabs.com"
+                }
+            ],
+            "description": "Inline editing for Filament tables and infolists with keyboard navigation, batch save, and visual feedback",
+            "transport-options": {
+                "relative": true
+            }
+        },
+        {
+            "name": "ashrafic/filament-translation-suite",
+            "version": "1.1.1",
+            "dist": {
+                "type": "zip",
+                "url": "https://packages.ashraficlabs.com/composer/download/v1.1.1"
             },
             "require": {
                 "filament/filament": "^5.0|^4.0",
@@ -120,11 +261,11 @@
                 "lint": [
                     "vendor/bin/pint --test"
                 ],
-                "lint:fix": [
-                    "vendor/bin/pint"
-                ],
                 "test": [
                     "vendor/bin/pest"
+                ],
+                "lint:fix": [
+                    "vendor/bin/pint"
                 ],
                 "test:coverage": [
                     "vendor/bin/pest --coverage"
@@ -141,22 +282,20 @@
                 }
             ],
             "description": "Unified file + model translation management for Filament with DeepL & Google Translate",
-            "transport-options": {
-                "relative": true
-            }
+            "time": "2026-06-25T02:02:18+00:00"
         },
         {
             "name": "ashrafic/filament-white-label",
-            "version": "v1.0.2",
+            "version": "v1.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ashrafic/filament-white-label.git",
-                "reference": "f40c2d3ee8b720a125c088c3a4ac98536beb4130"
+                "reference": "19805b763203cd078b49a602c108a6147350f61d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ashrafic/filament-white-label/zipball/f40c2d3ee8b720a125c088c3a4ac98536beb4130",
-                "reference": "f40c2d3ee8b720a125c088c3a4ac98536beb4130",
+                "url": "https://api.github.com/repos/ashrafic/filament-white-label/zipball/19805b763203cd078b49a602c108a6147350f61d",
+                "reference": "19805b763203cd078b49a602c108a6147350f61d",
                 "shasum": ""
             },
             "require": {
@@ -187,16 +326,17 @@
             ],
             "authors": [
                 {
-                    "name": "Ashraful Islam",
-                    "email": "ashraful@example.com"
+                    "name": "Ashrafic Labs",
+                    "email": "hello@ashraficlabs.com",
+                    "homepage": "https://ashraficlabs.com"
                 }
             ],
-            "description": "White-label branding for Filament panels. Let every tenant rebrand their admin panel in minutes — no code required.",
+            "description": "Total panel rebranding. For you and every tenant. No code.",
             "support": {
                 "issues": "https://github.com/ashrafic/filament-white-label/issues",
-                "source": "https://github.com/ashrafic/filament-white-label/tree/v1.0.2"
+                "source": "https://github.com/ashrafic/filament-white-label/tree/v1.0.6"
             },
-            "time": "2026-06-16T04:24:40+00:00"
+            "time": "2026-06-25T02:42:18+00:00"
         },
         {
             "name": "aws/aws-crt-php",
@@ -7394,6 +7534,80 @@
             "time": "2026-04-23T08:26:29+00:00"
         },
         {
+            "name": "spatie/laravel-webhook-server",
+            "version": "3.10.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/laravel-webhook-server.git",
+                "reference": "6106840254e22b667e77a885da69fff6035549ba"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/laravel-webhook-server/zipball/6106840254e22b667e77a885da69fff6035549ba",
+                "reference": "6106840254e22b667e77a885da69fff6035549ba",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "guzzlehttp/guzzle": "^6.3|^7.3",
+                "illuminate/bus": "^8.50|^9.0|^10.0|^11.0|^12.0|^13.0",
+                "illuminate/queue": "^8.50|^9.0|^10.0|^11.0|^12.0|^13.0",
+                "illuminate/support": "^8.50|^9.0|^10.0|^11.0|^12.0|^13.0",
+                "php": "^8.0",
+                "spatie/laravel-package-tools": "^1.11"
+            },
+            "require-dev": {
+                "mockery/mockery": "^1.4.3",
+                "orchestra/testbench": "^6.19|^7.0|^8.0|^10.0|^11.0",
+                "pestphp/pest": "^1.22|^2.0|^3.0|^4.0",
+                "pestphp/pest-plugin-laravel": "^1.3|^2.0|^3.0|^4.0",
+                "spatie/test-time": "^1.2.2"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Spatie\\WebhookServer\\WebhookServerServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\WebhookServer\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Freek Van der Herten",
+                    "email": "freek@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Send webhooks in Laravel apps",
+            "homepage": "https://github.com/spatie/laravel-webhook-server",
+            "keywords": [
+                "laravel-webhook-server",
+                "server",
+                "spatie",
+                "webhook"
+            ],
+            "support": {
+                "source": "https://github.com/spatie/laravel-webhook-server/tree/3.10.0"
+            },
+            "funding": [
+                {
+                    "url": "https://spatie.be/open-source/support-us",
+                    "type": "custom"
+                }
+            ],
+            "time": "2026-02-21T15:14:00+00:00"
+        },
+        {
             "name": "spatie/shiki-php",
             "version": "2.4.0",
             "source": {
@@ -14530,7 +14744,7 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "ashrafic/filament-translation-suite": 20
+        "ashrafic/filament-edit-inline": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,

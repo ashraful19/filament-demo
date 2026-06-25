@@ -1,0 +1,28 @@
+<?php
+
+return [
+    'heading' => 'Recent Activity',
+    'table.action' => 'Action',
+    'table.source' => 'Source',
+    'table.details' => 'Details',
+    'table.user' => 'User',
+    'table.date' => 'Date',
+    'table.system_user' => 'System',
+    'action_labels.imported' => 'Imported',
+    'action_labels.published' => 'Published',
+    'action_labels.scanned' => 'Scanned',
+    'action_labels.translated' => 'Translated',
+    'action_labels.backup_created' => 'Backup Created',
+    'action_labels.backup_restored' => 'Backup Restored',
+    'action_labels.backup_deleted' => 'Backup Deleted',
+    'source_labels.lang_files' => 'Lang Files',
+    'source_labels.publish_all' => 'All Keys',
+    'source_labels.publish_key' => 'Single Key',
+    'source_labels.code_scanner' => 'Code Scanner',
+    'source_labels.csv' => 'CSV Import',
+    'source_labels.system' => 'System Translations',
+    'details.items' => ':count items',
+    'details.imported_skipped' => ':imported imported, :skipped skipped',
+    'details.keys' => ':count keys',
+    'details.backup' => 'Backup #:id',
+];

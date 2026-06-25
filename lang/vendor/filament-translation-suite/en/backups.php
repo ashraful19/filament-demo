@@ -1,0 +1,26 @@
+<?php
+
+return [
+    'label' => 'Translation Backups',
+    'plural_label' => 'Translation Backups',
+    'table.keys' => 'Keys',
+    'table.locales' => 'Locales',
+    'table.created_by' => 'Created By',
+    'table.created' => 'Created',
+    'table.system_user' => 'System',
+    'actions.create_backup' => 'Create Backup',
+    'actions.restore' => 'Restore',
+    'actions.download' => 'Download',
+    'fields.label' => 'Label',
+    'fields.label_placeholder' => 'Manual backup — :date',
+    'messages.created' => 'Backup created',
+    'messages.created_body' => ':count keys backed up.',
+    'messages.restored' => 'Backup restored',
+    'messages.restored_body' => 'Database restored to \':label\'.',
+    'messages.restore_failed' => 'Restore failed',
+    'messages.download_failed' => 'Download failed',
+    'messages.download_failed_body' => 'Backup file not found on disk.',
+    'heading.create' => 'Create Translation Backup',
+    'heading.restore' => 'Restore Backup',
+    'description.restore' => 'This will truncate the current translation database and restore :keyCount keys across :localeCount locales from this backup. This action cannot be undone.',
+];

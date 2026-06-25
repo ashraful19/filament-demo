@@ -61,9 +61,10 @@ class AdminPanelProvider extends PanelProvider
                 //'primary' => Color::Blue,
             ])
             ->font('Albert Sans')
-            ->plugin(\Ashrafic\FilamentTranslationSuite\FilamentTranslationSuitePlugin::make());
-            // ->resources([
-            //     WhiteLabelSettingsResource::class,
-            // ])->whiteLabel();
+            ->plugin(\Ashrafic\FilamentTranslationSuite\FilamentTranslationSuitePlugin::make())
+            ->plugin(\Ashrafic\FilamentAutomationBridge\FilamentAutomationBridgePlugin::make())
+            ->resources([
+                WhiteLabelSettingsResource::class,
+            ])->whiteLabel();
     }
 }
